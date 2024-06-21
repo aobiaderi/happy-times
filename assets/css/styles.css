@@ -1,0 +1,399 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+  
+  /* Navbar logo styles */
+  .logo {
+    max-width: 60px;
+    border-radius: 50%;
+    margin-top: 2px;
+    margin-left: 5px;
+    animation: spin 2s linear infinite; 
+  }
+  
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    25% {
+      transform: rotate(15deg); /* Rotate 15 degrees to the right */
+    }
+    50% {
+      transform: rotate(0deg); /* Rotate back to 0 degrees */
+    }
+    75% {
+      transform: rotate(-15deg); /* Rotate 15 degrees to the left */
+    }
+    100% {
+      transform: rotate(0deg); /* Rotate back to 0 degrees */
+    }
+  }
+
+
+/* navbar items styling */
+   .navbar {
+  
+  border-top: 5px solid white; 
+  border-bottom: 5px solid ; 
+  } 
+  
+#menu {
+  color:white;
+}
+
+.nav-link {
+  color:white !important;
+  font-size: 24px;
+  
+}
+
+
+
+/* ensure nav item takes up only needed space and not the entire space available */
+.navbar .nav-item a {
+  display: inline-block; 
+  padding: 10px; 
+}
+
+.navbar .nav-item a:hover{
+  background-color: blue;
+}
+
+
+/* Jumbotron styling */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+/* Jumbotron styling */
+.jumbotron {
+  flex: 1;
+  margin-bottom: 0px;
+  background-color: transparent; /* No background image here */
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #82c1ef;
+  border-radius: 0;
+}
+
+/* Hero image styling */
+.hero-image {
+  border-radius: 50%;
+  width: 250px; 
+  height: 250px; 
+  object-fit: cover;
+  margin-top: -20px;
+}
+
+
+.jumbotron p{
+  margin-top:30px;
+  text-shadow: 2px 2px 4px #333;
+}
+
+.display-4 {
+  margin-top:30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/*home page Jumbotron button style */
+ 
+.cta {
+  cursor:pointer;
+  color:white !important;
+  font-weight: 600;
+  margin-top:30px;
+}
+/* Darker background on mouse-over */
+ .btn:hover {
+  background-color: RoyalBlue;
+}
+
+
+
+
+
+/* About page styling */
+
+.about-container {
+  background-color: #f8f9fa; /* Light gray background for the section */
+  padding: 50px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.about-container h1 {
+  font-family: 'Roboto', sans-serif; /* Custom font for headings */
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.about-container p.lead {
+  font-family: 'Open Sans', sans-serif; /* Custom font for subheadings */
+  color: #6c757d; /* Subtle text color */
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+.about-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-container ul li {
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px 0;
+  border-bottom: 1px solid #dee2e6; /* Subtle divider between list items */
+}
+
+.about-container ul li strong {
+  color: #007bff; /* Highlight the key points */
+}
+
+.about-container .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-image img{
+  border-radius: 30%; 
+
+  border: 2px solid #fff; 
+  transition: transform 0.3s; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.abt-1{
+  font-size: 20px;
+}
+
+
+/* bootstrap cards for categories.html*/
+.card-container{
+
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.card{
+  flex: 1 1 calc(25% - 1rem); /* 4 cards per row with some margin */
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* object-fit: cover; */
+  height: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Card body styling */
+.card-body {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.card-body:hover {
+  background-color: #f8f9fa;
+}
+
+/* Card title styling */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #343a40;
+  transition: color 0.3s;
+}
+
+.card-title:hover {
+  color: #007bff;
+}
+
+
+/* Card List styling */
+.card-body ul {
+  padding-left: 0;
+}
+
+.card-body ul li {
+  margin-bottom: 10px;
+}
+
+.card-body ul li a {
+  /* color: #007bff; */
+  text-decoration: none;
+  transition: color 0.3s;
+  text-shadow: 0.3s;
+}
+
+.card-body ul li a:hover {
+  color: #340894d2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* main section styles jumbotron for categories.html  */
+
+.category1 {
+  flex: 1;
+  margin-bottom: 0px;
+  /* background: #82c1ef; */
+  padding: 2rem 1rem;
+}
+.category1 p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+.display-5 {
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Us page styling */
+#contacts {
+  font-weight: bold;
+  display:flex;
+  justify-content: center;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif; /* Custom font for headings */
+  text-shadow: 2px 2px 4px #333;
+   
+}
+
+.contactsP {
+  display:flex;
+  font-family: 'Open Sans', sans-serif; /* Custom font for subheadings */
+  margin-top: 50px;
+  margin-bottom: 30px;
+  justify-content: center;
+
+  
+  
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+#contactContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+  
+}
+
+.form-control {
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1em;
+}
+
+.container-contact {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; 
+  width: 100%;
+  
+}
+
+
+
+
+
+
+/* footer style */
+ .footer {
+  background-color: #182848;
+  color: white;
+  padding: 10px 0;
+  font-weight: 400;
+  width: 100%;
+  border-top: 5px solid rebeccapurple; 
+  border-bottom: 5px solid #750a0a; 
+
+}
+
+.badge-link img {
+  width: 120px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .badge-link img.badge {
+      width: 100px;
+  }
+}
+.footer h5 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  
+}
+
+.footer p, .footer a {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+} 
