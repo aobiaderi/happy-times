@@ -42,7 +42,7 @@ const surnameFormGroup = document.createElement('div');
 surnameFormGroup.classList.add('form-group');
 
 const surnameLabel = document.createElement('label');
-surnameLabel.setAttribute('for', 'name');
+surnameLabel.setAttribute('for', 'surname');
 surnameLabel.textContent = 'Last Name';
 
 const surnameInput = document.createElement('input');
@@ -136,6 +136,13 @@ document.getElementById('contactContainer').appendChild(formContainer);
 form.addEventListener('submit', (event) => {
     // Stop the form from submitting the usual way
     event.preventDefault();
+    // Get the values from the form fields
+    const firstName = document.getElementById('name').value;
+    const lastName = document.getElementById('surname').value;
+
+    // Update the modal body with the user's name and surname
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    confirmationMessage.textContent = `Your message has been sent successfully, ${firstName} ${lastName}. We will get back to you shortly.`;
     // Show the confirmation modal (pop-up)
     $('#confirmationModal').modal('show');
      // Clear the form fields
