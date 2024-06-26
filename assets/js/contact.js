@@ -141,8 +141,8 @@ form.addEventListener('submit', (event) => {
     const lastName = document.getElementById('surname').value;
 
     // Update the modal body with the user's name and surname
-    const confirmationMessage = document.getElementById('confirmationMessage');
-    confirmationMessage.textContent = `Your message has been sent successfully, ${firstName} ${lastName}. We will get back to you shortly.`;
+    const confirmationMessage = document.getElementById('modal-body1');
+    confirmationMessage.textContent = ` Your message has been sent successfully, ${firstName} ${lastName}. We will get back to you shortly.`;
     // Show the confirmation modal (pop-up)
     $('#confirmationModal').modal('show');
      // Clear the form fields
