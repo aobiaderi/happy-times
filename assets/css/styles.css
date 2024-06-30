@@ -359,6 +359,26 @@ button.btn-primary:hover {
   
 }
 
+.question-mark {
+  font-weight: bold;
+  color: red;
+  position:absolute;
+  right: -20px;
+  top: 70%;
+  display:none;/*hide by default*/
+  transform: translate(-50%);
+
+}
+
+.position-relative {
+  position: relative;
+}
+
+#errorMessages {
+  color: red;
+  margin-bottom: 10px;
+}
+
 
 
 
