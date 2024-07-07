@@ -85,9 +85,11 @@ const phoneInput = document.createElement('input');
 phoneInput.type = 'text';
 phoneInput.classList.add('form-control');
 phoneInput.id = 'phone';
-phoneInput.placeholder = 'Enter your phone number e.g 01234567890';
+phoneInput.placeholder = 'Enter your phone number e.g +441234567890';
 phoneInput.name = 'phone';
-phoneInput.pattern = '^[0-9]{10}(?:[0-9]{1})?$';
+// Pattern allows an optional + at the start, followed by at least 11 digits (12 digits if + is included)
+phoneInput.pattern = '^(\\+?[0-9]{11,}|[0-9]{11,})$';
+
 
 // Create the question mark span
 const phoneQuestionMark = document.createElement('span');
@@ -164,23 +166,23 @@ document.getElementById('contactContainer').appendChild(formContainer);
 // Validation functions
 function validateFirstName() {
     const firstName = nameInput.value.trim();
-    if (firstName === '' || /\d/.test(firstName)) {
+    if (firstName === '' || /[^a-zA-Z]/.test(firstName)) {
         nameQuestionMark.style.display = 'inline';
-        showError('First name cannot be empty and must not contain numbers.');
+        showError('First name cannot be empty and only contain alphabetic characters..');
     } else {
         nameQuestionMark.style.display = 'none';
-        hideError('First name cannot be empty and must not contain numbers.');
+        hideError('First name cannot be empty and must only contain alphabetic characters.');
     }
 }
 
 function validateLastName() {
     const lastName = surnameInput.value.trim();
-    if (lastName === '' || /\d/.test(lastName)) {
+    if (lastName === '' || /[^a-zA-Z]/.test(lastName)) {
         surnameQuestionMark.style.display = 'inline';
-        showError('Last name cannot be empty and must not contain numbers.');
+        showError('Last name cannot be empty and must only contain alphabetic characters.');
     } else {
         surnameQuestionMark.style.display = 'none';
-        hideError('Last name cannot be empty and must not contain numbers.');
+        hideError('Last name cannot be empty and must only contain alphabetic characters.');
     }
 }
 function validateEmail() {
@@ -200,18 +202,20 @@ function validateEmail() {
 }
 
 
+// Function to validate the phone number
 function validatePhone() {
     const phone = phoneInput.value.trim();
-    const phonePattern = /^[0-9]{10}(?:[0-9]{1})?$/;
+    // Pattern allows an optional + at the start, followed by at least 11 digits (12 digits if + is included)
+    const phonePattern = /^(?:\+?[0-9]{12,}|[0-9]{11,})$/;
     if (!phonePattern.test(phone)) {
         phoneQuestionMark.style.display = 'inline';
-        showError('Please enter a valid phone number (10-11 digits).');
+        showError('Please enter a valid phone number with at least 11 digits. If using an international format, start with + and have at least 12 digits.');
     } else {
         phoneQuestionMark.style.display = 'none';
-        hideError('Please enter a valid phone number (10-11 digits).');
-
+        hideError('Please enter a valid phone number with at least 11 digits. If using an international format, start with + and have at least 12 digits.');
     }
 }
+
 
 // Function to show error messages
 function showError(message) {
@@ -230,11 +234,22 @@ function hideError(message) {
     }
 }
 
+function validateMessage() {
+    const message = messageTextarea.value.trim();
+    const minLength = 10;
+    const maxLength = 300;
+    if (message.length < minLength || message.length > maxLength) {
+        showError(`Message must be between ${minLength} and ${maxLength} characters.`);
+    } else {
+        hideError(`Message must be between ${minLength} and ${maxLength} characters.`);
+    }
+}
 // Add real-time validation event listeners
 nameInput.addEventListener('input', validateFirstName);
 surnameInput.addEventListener('input', validateLastName);
 emailInput.addEventListener('input', validateEmail);
 phoneInput.addEventListener('input', validatePhone);
+messageTextarea.addEventListener('input', validateMessage);
 
 // Add a listener for when the form is submitted 
 form.addEventListener('submit', (event) => {
@@ -249,6 +264,7 @@ form.addEventListener('submit', (event) => {
     validateLastName();
     validateEmail();
     validatePhone();
+    validateMessage();
 
     // Check for invalid fields and display custom messages
     const fields = [nameInput, surnameInput, emailInput, phoneInput];
