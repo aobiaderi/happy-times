@@ -237,7 +237,7 @@ function hideError(message) {
 function validateMessage() {
     const message = messageTextarea.value.trim();
     const minLength = 10;
-    const maxLength = 300;
+    const maxLength = 3000;
     if (message.length < minLength || message.length > maxLength) {
         showError(`Message must be between ${minLength} and ${maxLength} characters.`);
     } else {
