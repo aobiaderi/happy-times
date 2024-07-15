@@ -166,18 +166,20 @@ document.getElementById('contactContainer').appendChild(formContainer);
 // Validation functions
 function validateFirstName() {
     const firstName = nameInput.value.trim();
-    if (firstName === '' || /[^a-zA-Z]/.test(firstName)) {
+    const errorMessage = 'First name cannot be empty and must only contain alphabetic characters.';
+    if (firstName === '' || /[^a-zA-Z\s]/.test(firstName)) {
         nameQuestionMark.style.display = 'inline';
-        showError('First name cannot be empty and only contain alphabetic characters..');
+        showError(errorMessage);
     } else {
         nameQuestionMark.style.display = 'none';
-        hideError('First name cannot be empty and must only contain alphabetic characters.');
+        hideError(errorMessage);
     }
 }
 
+
 function validateLastName() {
     const lastName = surnameInput.value.trim();
-    if (lastName === '' || /[^a-zA-Z]/.test(lastName)) {
+    if (lastName === '' || /[^a-zA-Z\s]/.test(lastName)) {
         surnameQuestionMark.style.display = 'inline';
         showError('Last name cannot be empty and must only contain alphabetic characters.');
     } else {
