@@ -381,7 +381,7 @@ button.btn-primary:hover {
 
 
 #contactContainer {
-  min-height: calc(100vh - 200px); /* Adjusted to ensure enough space for content */
+  min-height: calc(100vh); /* Adjusted to ensure enough space for content */
 }
 
 /* footer style */
