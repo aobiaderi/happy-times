@@ -381,7 +381,13 @@ button.btn-primary:hover {
 
 
 #contactContainer {
-  min-height: calc(100vh); /* Adjusted to ensure enough space for content */
+  /* min-height: calc(100vh); */
+  min-height: 100vh;/* Adjusted to ensure enough space for content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px; 
 }
 
 /* footer style */
