@@ -13,7 +13,7 @@ document.getElementById("contactContainer").appendChild(contactP);
 
 // Create and append the form container
 const formContainer = document.createElement('div');
-formContainer.classList.add('container-contact', 'container', 'mt-5', 'p-5', 'rounded', 'shadow');
+formContainer.classList.add('container-contact', 'container', 'mt-5', 'p-5', 'rounded', 'shadow', 'fade-in-delay');
 
 // Create the form element
 const form = document.createElement('form');

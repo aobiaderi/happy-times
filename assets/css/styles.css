@@ -477,6 +477,21 @@ button.btn-primary:hover {
   margin-bottom: 50px; 
 }
 
+/* Medium screens (tablets and small desktops, max-width: 991.98px) */
+@media (max-width: 991.98px) {
+  #contactContainer {
+    margin-top: 150px; /* Increased top margin */
+    margin-bottom: 150px; /* Increased bottom margin */
+  }
+}
+
+/* Small screens (mobile phones, max-width: 575.98px) */
+@media (max-width: 575.98px) {
+  #contactContainer {
+    margin-top: 150px; /* Increased top margin */
+    margin-bottom: 150px; /* Increased bottom margin */
+  }
+}
 /* footer style */
  .footer {
   background-color: #182848;
