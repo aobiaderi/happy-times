@@ -196,6 +196,34 @@ main {
   font-size: 20px;
 }
 
+/* Add animations to About Us page */
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 3s forwards; /* Adjust the timing as needed */
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 5s forwards;
+  animation-delay: 0.5s; /* Add a delay for a staggered effect */
+}
+
+
+
+
 
 /* bootstrap cards for categories.html*/
 .card-container{
