@@ -287,6 +287,21 @@ main {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s infinite;
+}
+
+/* add pulse on hover animations to bootstrap cards on categories page */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .card img {
@@ -304,6 +319,9 @@ main {
   background-color: #fff;
   transition: background-color 0.3s;
 }
+
+/* Apply the animation to the cards */
+
 
 .card-body:hover {
   background-color: #f8f9fa;
@@ -360,7 +378,10 @@ main {
   margin-top: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
+.explore{
+  color:#5d14e3;
+  font-weight: 600;
+}
 /* Contact Us page styling */
 #contacts {
   font-weight: bold;
