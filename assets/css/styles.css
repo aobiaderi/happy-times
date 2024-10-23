@@ -144,7 +144,7 @@ main {
 
 .about-container {
   background-color: #f8f9fa; /* Light gray background for the section */
-  padding: 50px 15px;
+  padding: 50px 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -158,7 +158,8 @@ main {
 
 .about-container p.lead {
   font-family: 'Open Sans', sans-serif; /* Custom font for subheadings */
-  color: #6c757d; /* Subtle text color */
+  color: #0a80e6; 
+  /* color: #6c757d;Subtle text color */
   margin-bottom: 40px;
   font-size: 22px;
 }
@@ -188,8 +189,12 @@ main {
   border-radius: 30%; 
 
   border: 2px solid #fff; 
-  transition: transform 0.3s; 
+  transition: transform 0.3s ease-in-out; /* Smooth transition */; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.about-image img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .abt-1{
