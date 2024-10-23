@@ -1,12 +1,13 @@
 // Create and append the heading
 const contactUs = document.createElement('h1');
 contactUs.id = 'contacts';
+contactUs.classList.add('fade-in')
 contactUs.textContent = 'Contact Us';
 document.getElementById("contactContainer").appendChild(contactUs);
 
 // Create and append the paragraph text
 const contactP = document.createElement('p');
-contactP.classList.add('contactsP', 'lead', 'text-break','pl-3','pr-3');
+contactP.classList.add('contactsP', 'lead', 'text-break','pl-3','pr-3','explore','fade-in-delay');
 contactP.textContent = 'Need to get in touch? We’d love to hear from you. Please fill in the contact form below and a member of our team will get back to you shortly.';
 document.getElementById("contactContainer").appendChild(contactP);
 
