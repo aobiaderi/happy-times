@@ -535,3 +535,21 @@ button.btn-primary:hover {
   color: white;
   text-decoration: none;
 }
+
+
+.icon {
+  font-size: 30px; /* General size for all icons */
+  margin: 0 3px; /* Spacing */
+}
+.icon-facebook {
+  color: #3b5998;/* Facebook blue */
+  font-size: 30px; 
+}
+
+.fa-x {
+  color: #1da1f2; /* X (formerly Twitter) blue */
+}
+
+.fa-instagram {
+  color: #c32aa3; /* Instagram pink */
+}

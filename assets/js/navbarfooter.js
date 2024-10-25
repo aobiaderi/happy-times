@@ -34,9 +34,19 @@ const loadNavbar = () => {
       .catch(error => console.error('Error fetching footer:', error));
   }
   
-  // Call functions to load navbar and footer when the DOM content is loaded
+    // Function to load fontAwesome library
+  function loadFontAwesome() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+    link.integrity = 'sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMWwNejN5q0YgT4WxA8C6zk00B7c4j1iH1bT3';
+    link.crossOrigin = 'anonymous';
+    document.head.appendChild(link);
+  }
+  // Call functions to load fontAwesome, navbar and footer when the DOM content is loaded
   document.addEventListener('DOMContentLoaded', () => {
+    loadFontAwesome();
     loadNavbar();
     loadFooter();
   });
-  
+
